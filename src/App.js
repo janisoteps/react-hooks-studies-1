@@ -1,28 +1,31 @@
+import React, { useState } from "react";
+import data from './data.json';
+//components
+import Header from './header';
+import ToDoList from "./ToDoList";
+
 import './App.css';
-import Header from "./components/Header";
-import React from "react";
 
 function App() {
+    const [ toDoList, setToDoList] = useState(data);
+
+    const handleToggle = (id) => {
+        let mapped = toDoList.map(task => {
+            return task.id == id ? {...task, complete: !task.complete} : {...task};
+        });
+        setToDoList(mapped);
+    };
+
 
     return (
-        <div
-            style={{
-                width: '100vw',
-                position: 'relative'
-            }}
-        >
-            <Header />
-
-            <div
-                style={{
-                    position: 'relative',
-                    textAlign: 'center',
-                }}
-            >
-                <h1>Hello</h1>
-            </div>
+        <div className = 'App'>
+           <Header />
+           <ToDoList toDoList = {toDoList}/>
         </div>
+        
     );
+
+
 }
 
 export default App;
