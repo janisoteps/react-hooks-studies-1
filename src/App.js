@@ -7,11 +7,11 @@ import ToDoList from "./ToDoList";
 import './App.css';
 
 function App() {
-    const [ toDoList, setToDoList] = useState(data);
+    const [toDoList, setToDoList] = useState(data);
 
     const handleToggle = (id) => {
         let mapped = toDoList.map(task => {
-            return task.id == id ? {...task, complete: !task.complete} : {...task};
+            return task.id === id ? {...task, complete: !task.complete} : {...task};
         });
         setToDoList(mapped);
     };
@@ -20,9 +20,12 @@ function App() {
     return (
         <div className = 'App'>
            <Header />
-           <ToDoList toDoList = {toDoList}/>
+           <ToDoList
+               toDoList = {toDoList}
+               handleToggle={handleToggle}
+           />
         </div>
-        
+
     );
 
 
