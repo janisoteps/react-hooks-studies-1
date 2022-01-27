@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import data from './data.json';
 //components
-import Header from './header';
-import ToDoList from "./ToDoList";
-import ToDoForm from "./ToDoForm";
+import Header from './components/header';
+import ToDoList from "./components/ToDoList";
+import ToDoForm from "./components/ToDoForm";
 
 import './App.css';
 
