@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import data from './data.json';
+import data from './data/data.json';
 //components
-import Header from './header';
-import ToDoList from "./ToDoList";
-import ToDoForm from "./ToDoForm";
-
+import Header from './components/Header';
+import ToDoList from "./components/ToDoList";
+import ToDoForm from "./components/ToDoForm";
 import './App.css';
 
 function App() {
@@ -38,15 +37,15 @@ function App() {
     return (
         <div className = 'App'>
            <Header />
-           <ToDoList 
+           <ToDoList
            toDoList = {toDoList}
            handleToggle = {handleToggle}
            handleFilter={handleFilter}
            />
-           <ToDoForm 
+           <ToDoForm
            addTask={addTask}/>
         </div>
-        
+
     );
 
 
