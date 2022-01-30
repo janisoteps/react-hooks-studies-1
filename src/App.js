@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from './data.json';
+import data from './data/data.json';
 //components
 import Header from './components/header';
 import ToDoList from "./components/ToDoList";
