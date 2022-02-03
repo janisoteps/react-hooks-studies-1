@@ -9,13 +9,12 @@ const ToDoForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*addTask(userInput);
-    setUserInput("");*/
     if (userInput) {
       addTask(userInput);
     } else {
       alert("Input a valid task name");
     }
+    setUserInput("");
   };
 
   return (
