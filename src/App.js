@@ -4,8 +4,8 @@ import data from "./data/data.json";
 import Header from "./components/Header";
 import ToDoList from "./components/ToDoList";
 import ToDoForm from "./components/ToDoForm";
-
 import "./App.css";
+
 
 function App() {
     const [toDoList, setToDoList] = useState(data);
@@ -42,9 +42,10 @@ function App() {
                 handleToggle={handleToggle}
                 handleFilter={handleFilter}
             />
+
             <ToDoForm addTask={addTask} />
         </div>
     );
-};
-  export default App
+}
 
+export default App

@@ -28,5 +28,5 @@ const ToDoForm = ({ addTask }) => {
         </form>
     );
 };
-export default ToDoForm;
 
+export default ToDoForm;

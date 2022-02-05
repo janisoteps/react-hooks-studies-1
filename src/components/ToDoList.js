@@ -13,13 +13,13 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
                         handleFilter={handleFilter}
                     />
                 );
-            })};
+            })}
 
             <button style={{ margin: "20px" }} onClick={handleFilter}>
-              Clear Completed
+                Clear Completed
             </button>
         </div>
     );
 };
-export default ToDoList;
 
+export default ToDoList;

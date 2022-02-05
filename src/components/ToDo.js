@@ -5,12 +5,12 @@ const ToDo = ({ todo, handleToggle }) => {
         <div
             className={todo.complete ? "strick" : ""}
             onClick={() => {
-            handleToggle(todo.id);
-            }}>
+                handleToggle(todo.id);
+            }}
+        >
             {todo.task}
         </div>
     );
 };
+
 export default ToDo;
-
-
