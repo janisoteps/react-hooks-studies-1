@@ -3,22 +3,31 @@ import ToDo from "./../components/ToDo";
 
 const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
     return (
-        <div>
-            {toDoList.map((todo) => {
-                return (
-                    <ToDo
-                        key={todo.id}
-                        todo={todo}
-                        handleToggle={handleToggle}
-                        handleFilter={handleFilter}
-                    />
-                );
-            })}
+      <div>
+        {toDoList.map((todo) => {
+          return (
+            <ToDo
+              key={todo.id}
+              todo={todo}
+              handleToggle={handleToggle}
+              handleFilter={handleFilter}
+            />
+          );
+        })}
 
-            <button style={{ margin: "20px" }} onClick={handleFilter}>
-                Clear Completed
-            </button>
-        </div>
+        <button
+          style={{
+            margin: "20px",
+            backgroundColor: "yellow",
+            color: "black",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+          onClick={handleFilter}
+        >
+          Clear Completed
+        </button>
+      </div>
     );
 };
 

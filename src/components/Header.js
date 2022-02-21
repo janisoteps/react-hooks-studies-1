@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
 
-      <h1>TO DO LIST</h1>
+      <h1 style={{color: 'yellow'}}>TO DO LIST</h1>
 
     </header>
   );

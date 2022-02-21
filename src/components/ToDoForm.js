@@ -27,7 +27,17 @@ const ToDoForm = ({ addTask }) => {
                 onChange={handleChange}
                 placeholder="Enter task..."
             />
-            <button classname = 'btn' type ='submit'>add</button>
+            <button 
+            style ={{
+                backgroundColor: 'yellow',
+                color: 'black',
+                cursor: 'pointer',
+                margin: '10px',
+                fontWeight: 'bold',     
+            }}
+            type ='submit'>
+                add
+            </button>
         </form>
     );
 };
