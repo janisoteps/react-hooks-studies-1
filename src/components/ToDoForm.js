@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 const ToDoForm = ({ addTask }) => {
     const [userInput, setUserInput] = useState("");
 
@@ -25,6 +27,7 @@ const ToDoForm = ({ addTask }) => {
                 onChange={handleChange}
                 placeholder="Enter task..."
             />
+            <button classname = 'btn' type ='submit'>add</button>
         </form>
     );
 };
