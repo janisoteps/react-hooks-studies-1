@@ -23,7 +23,7 @@ function App() {
 
     const handleFilter = () => {
         let filtered = toDoList.filter((task) => {
-          return !task.complete;
+            return !task.complete;
         });
         setToDoList(filtered);
     };

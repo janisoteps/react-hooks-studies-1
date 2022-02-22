@@ -20,25 +20,30 @@ const ToDoForm = ({ addTask }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                value={userInput}
-                type="text"
-                onChange={handleChange}
-                placeholder="Enter task..."
-            />
-            <button 
-            style ={{
-                backgroundColor: 'yellow',
-                color: 'black',
-                cursor: 'pointer',
-                margin: '10px',
-                fontWeight: 'bold',     
-            }}
-            type ='submit'>
-                add
-            </button>
-        </form>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={userInput}
+          type="text"
+          onChange={handleChange}
+          placeholder="Enter task..."
+          style={{
+            borderRadius: "5px",
+            backgroundColor: "#F2D1B3",
+          }}
+        />
+        <button
+          style={{
+            backgroundColor: "#733843",
+            color: "black",
+            borderRadius: "5px",
+            cursor: "pointer",
+            margin: "10px",
+          }}
+          type="submit"
+        >
+          add
+        </button>
+      </form>
     );
 };
 

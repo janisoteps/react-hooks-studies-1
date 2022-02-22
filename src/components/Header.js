@@ -3,9 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-
-      <h1 style={{color: 'yellow'}}>TO DO LIST</h1>
-
+      <h1 style={{ color: "#733843" }}>TO DO LIST</h1>
     </header>
   );
 };
