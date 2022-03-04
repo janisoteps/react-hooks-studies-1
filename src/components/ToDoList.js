@@ -20,6 +20,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
         })}
 
             <button
+                onClick={handleFilter}
                 style={{
                     margin: "20px",
                     backgroundColor: "#733843",
@@ -28,7 +29,6 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
                     borderRadius:'5px'
               
                 }}
-                onClick={handleFilter}
             >
               Clear Completed
             </button>
