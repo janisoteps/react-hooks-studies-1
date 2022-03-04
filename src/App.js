@@ -21,6 +21,13 @@ function App() {
         setToDoList(mapped);
     };
 
+    const deleteTodo = (id) => {
+        let clean = toDoList.filter((task) => {
+            return task.id !== id
+        });
+        setToDoList(clean);
+    }; 
+
     const handleFilter = () => {
         let filtered = toDoList.filter((task) => {
             return !task.complete;
@@ -41,6 +48,7 @@ function App() {
                 toDoList={toDoList}
                 handleToggle={handleToggle}
                 handleFilter={handleFilter}
+                deleteTodo={deleteTodo}
             />
 
             <ToDoForm addTask={addTask} />

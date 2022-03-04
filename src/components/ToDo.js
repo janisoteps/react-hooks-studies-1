@@ -2,12 +2,9 @@ import React from "react";
 import ActionButton from "./ActionButton";
 
 
-const ToDo = ({ todo, handleToggle }) => {
+const ToDo = ({ todo, handleToggle, deleteTodo }) => {
     return (
       	<div
-        	onClick={() => {
-          		handleToggle(todo.id);
-        	}}
         	style={{
           		backgroundColor: "#F2E2DF",
           		color: "#252326",
@@ -34,12 +31,16 @@ const ToDo = ({ todo, handleToggle }) => {
 				}}
 			>
 				<ActionButton
-					actionFunction={()=>{}}
+					actionFunction={() => {
+						deleteTodo(todo.id)
+					}}
 					buttonText='delete'
 					buttonColor='#f56967'
 				/>
 				<ActionButton 
-					actionFunction={()=>{}}
+					actionFunction={() => {
+						handleToggle(todo.id);
+					}}
 					buttonText='done'
 					buttonColor='#42f54b'
 				/>
