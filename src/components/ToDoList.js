@@ -1,21 +1,27 @@
 import React from "react";
 import ToDo from "./../components/ToDo";
 
-const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
+const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo }) => {
     return (
-        <div>
+        <div
+            style={{
+              	maxWidth: "700px",
+              	margin: "auto",
+            }}>
             {toDoList.map((todo) => {
-              return (
-                <ToDo
-                    key={todo.id}
-                    todo={todo}
-                    handleToggle={handleToggle}
-                    handleFilter={handleFilter}
-                />
-          );
+              	return (
+                	<ToDo
+                    	key={todo.id}
+                    	todo={todo}
+                    	handleToggle={handleToggle}
+                    	handleFilter={handleFilter}
+                    	deleteTodo={deleteTodo}
+                	/>
+          		);
         })}
 
             <button
+                onClick={handleFilter}
                 style={{
                     margin: "20px",
                     backgroundColor: "#733843",
@@ -24,7 +30,6 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
                     borderRadius:'5px'
               
                 }}
-                onClick={handleFilter}
             >
               Clear Completed
             </button>
