@@ -5,19 +5,19 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo }) => {
     return (
         <div
             style={{
-              maxWidth: "700px",
-              margin: "auto",
+              	maxWidth: "700px",
+              	margin: "auto",
             }}>
             {toDoList.map((todo) => {
-              return (
-                <ToDo
-                    key={todo.id}
-                    todo={todo}
-                    handleToggle={handleToggle}
-                    handleFilter={handleFilter}
-                    deleteTodo={deleteTodo}
-                />
-          );
+              	return (
+                	<ToDo
+                    	key={todo.id}
+                    	todo={todo}
+                    	handleToggle={handleToggle}
+                    	handleFilter={handleFilter}
+                    	deleteTodo={deleteTodo}
+                	/>
+          		);
         })}
 
             <button

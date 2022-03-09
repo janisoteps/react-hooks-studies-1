@@ -22,7 +22,7 @@ function App() {
     };
 
     const deleteTodo = (id) => {
-        let clean = toDoList.filter((task) => {
+        const clean = toDoList.filter((task) => {
             return task.id !== id
         });
         setToDoList(clean);

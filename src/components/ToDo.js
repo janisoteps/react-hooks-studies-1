@@ -3,7 +3,7 @@ import ActionButton from "./ActionButton";
 
 
 const ToDo = ({ todo, handleToggle, deleteTodo }) => {
-    return (
+	return (
       	<div
         	style={{
           		backgroundColor: "#F2E2DF",
