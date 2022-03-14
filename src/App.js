@@ -48,7 +48,7 @@ function App() {
             return task.id !== id
         });
         setToDoList(clean);
-        
+        saveStateToLocalStorage(clean)
     }; 
 
     const handleFilter = () => {
