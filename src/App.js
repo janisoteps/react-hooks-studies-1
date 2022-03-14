@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data/data.json";
 //components
 import Header from "./components/Header";
@@ -7,8 +7,30 @@ import ToDoForm from "./components/ToDoForm";
 import "./App.css";
 
 
+
 function App() {
-    const [toDoList, setToDoList] = useState(data);
+    const [toDoList, setToDoList] = useState([]);
+
+    useEffect(() => {
+        getStateFromLocalStorage()
+    }, [])
+
+    const getStateFromLocalStorage = () =>{
+        let statedata = localStorage.getItem('state');
+        if(statedata !== undefined) {
+            const parsedData = JSON.parse(statedata);
+            if(Array.isArray(parsedData)) {
+                setToDoList(parsedData)
+            } else {
+                setToDoList([])
+            }
+            
+        }
+    };
+
+    const saveStateToLocalStorage = (taskList) => {
+        localStorage.setItem('state', JSON.stringify(taskList))
+    };
 
     const handleToggle = (id) => {
         const mapped = toDoList.map((task) => {
@@ -26,6 +48,7 @@ function App() {
             return task.id !== id
         });
         setToDoList(clean);
+        
     }; 
 
     const handleFilter = () => {
@@ -39,6 +62,7 @@ function App() {
         let copy = [...toDoList];
         copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
         setToDoList(copy);
+        saveStateToLocalStorage(copy)
     };
 
     return (
