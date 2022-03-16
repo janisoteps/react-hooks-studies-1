@@ -12,24 +12,23 @@ function App() {
     const [toDoList, setToDoList] = useState([]);
 
     useEffect(() => {
-        getStateFromLocalStorage()
-    }, [])
+        getStateFromLocalStorage();
+    }, []); 
 
     const getStateFromLocalStorage = () =>{
         let statedata = localStorage.getItem('state');
         if(statedata !== undefined) {
-            const parsedData = JSON.parse(statedata);
+            let parsedData = JSON.parse(statedata);
             if(Array.isArray(parsedData)) {
-                setToDoList(parsedData)
+                setToDoList(parsedData);
             } else {
-                setToDoList([])
-            }
-            
+                setToDoList([]);
+            }; 
         }
     };
 
     const saveStateToLocalStorage = (taskList) => {
-        localStorage.setItem('state', JSON.stringify(taskList))
+        localStorage.setItem('state', JSON.stringify(taskList));
     };
 
     const handleToggle = (id) => {
@@ -48,7 +47,7 @@ function App() {
             return task.id !== id
         });
         setToDoList(clean);
-        saveStateToLocalStorage(clean)
+        saveStateToLocalStorage(clean);
     }; 
 
     const handleFilter = () => {
@@ -60,9 +59,14 @@ function App() {
 
     const addTask = (userInput) => {
         let copy = [...toDoList];
-        copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
+        let newId = `${Math.random()}`;
+        let newToDo = {
+            id: newId,  
+            task: userInput, 
+            complete: false }
+        copy = [...copy, newToDo];
         setToDoList(copy);
-        saveStateToLocalStorage(copy)
+        saveStateToLocalStorage(copy);
     };
 
     return (
