@@ -16,13 +16,13 @@ function App() {
     }, []); 
 
     const getStateFromLocalStorage = () =>{
-        let statedata = localStorage.getItem('state');
+        const statedata = localStorage.getItem('state');
         if(statedata !== undefined) {
             let parsedData = JSON.parse(statedata);
             if(Array.isArray(parsedData)) {
-                setToDoList(parsedData);
+                setToDoList(parsedData)
             } else {
-                setToDoList([]);
+                setToDoList([])
             }; 
         }
     };
@@ -59,11 +59,11 @@ function App() {
 
     const addTask = (userInput) => {
         let copy = [...toDoList];
-        let newId = `${Math.random()}`;
-        let newToDo = {
+        const newId = `${Math.random()}`;
+        const newToDo = {
             id: newId,  
             task: userInput, 
-            complete: false }
+            complete: false };
         copy = [...copy, newToDo];
         setToDoList(copy);
         saveStateToLocalStorage(copy);
