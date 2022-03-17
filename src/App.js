@@ -20,10 +20,10 @@ function App() {
         if(statedata !== undefined) {
             let parsedData = JSON.parse(statedata);
             if(Array.isArray(parsedData)) {
-                setToDoList(parsedData)
+                setToDoList(parsedData);
             } else {
-                setToDoList([])
-            }; 
+                setToDoList([]);
+            } 
         }
     };
 
