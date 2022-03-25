@@ -40,6 +40,7 @@ function App() {
             }
         });
         setToDoList(mapped);
+        saveStateToLocalStorage(mapped);
     };
 
     const deleteTodo = (id) => {
