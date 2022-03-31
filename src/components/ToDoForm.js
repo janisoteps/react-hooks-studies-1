@@ -28,12 +28,12 @@ const ToDoForm = ({ addTask }) => {
           		placeholder="Enter task..."
           		style={{
             		borderRadius: "5px",
-            		backgroundColor: "#F2D1B3",
+            		backgroundColor: "#DBC4B7",
           	    }}
         />
         	<button
           		style={{
-            		backgroundColor: "#733843",
+            		backgroundColor: "#F2D8C2",
             		color: "black",
             		borderRadius: "5px",
             		cursor: "pointer",

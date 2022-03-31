@@ -1,7 +1,7 @@
 import React from "react";
 import ToDo from "./../components/ToDo";
 
-const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo }) => {
+const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo, updateTodo }) => {
     return (
         <div
             style={{
@@ -16,6 +16,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo }) => {
                     	handleToggle={handleToggle}
                     	handleFilter={handleFilter}
                     	deleteTodo={deleteTodo}
+                        updateTodo={updateTodo}
                 	/>
           		);
         })}
@@ -24,7 +25,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter, deleteTodo }) => {
                 onClick={handleFilter}
                 style={{
                     margin: "20px",
-                    backgroundColor: "#733843",
+                    backgroundColor: "#F2D8C2",
                     color: "black",
                     cursor: "pointer",
                     borderRadius:'5px'

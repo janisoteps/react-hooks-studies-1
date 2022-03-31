@@ -43,6 +43,21 @@ function App() {
         saveStateToLocalStorage(mapped);
     };
 
+    //const updateTodo = (id, newValue) =>{
+        //if(!newValue.text || /^\s*$/.test(newValue.text)){
+            //return;
+        //};
+        //setToDoList(prev => prev.map(item => (item.id === id ? newValue:item))
+        //);
+    //};
+
+    //const updateTodo = (id, newValue) =>{
+        //const edit = toDoList.map(id) =>{
+            //return !{
+        //}
+        //setToDoList(edit)
+    //};
+
     const deleteTodo = (id) => {
         const clean = toDoList.filter((task) => {
             return task.id !== id
@@ -78,6 +93,7 @@ function App() {
                 handleToggle={handleToggle}
                 handleFilter={handleFilter}
                 deleteTodo={deleteTodo}
+                //updateTodo={updateTodo}
             />
 
             <ToDoForm addTask={addTask} />
