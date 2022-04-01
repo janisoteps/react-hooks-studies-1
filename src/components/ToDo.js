@@ -50,6 +50,7 @@ const ToDo = ({ todo, handleToggle, deleteTodo, updateTodo }) => {
 					}}
 					buttonText='change'
 					buttonColor='#f2d8c2'
+					type="submit"
 				/>
 			</div>
       	</div>
