@@ -6,6 +6,7 @@ import ToDoList from "./components/ToDoList";
 import ToDoForm from "./components/ToDoForm";
 import "./App.css";
 import ToDo from "./components/ToDo";
+import Update from "./components/Update";
 
 
 
@@ -44,51 +45,6 @@ function App() {
         saveStateToLocalStorage(mapped);
     };
 
-    /*const updateTodo = (id, newuserInput) => {
-            let edit = [...toDoList];
-            const editTask = {
-                id: id,  
-                task: newuserInput, 
-                complete: false };
-            edit = [...edit, editTask]; 
-            setToDoList(edit);
-            saveStateToLocalStorage(edit);*/
-
-    const updateTodo = (id, {editTask}) => {
-        const [newUserInput, changeUserInput] = useState("");    
-
-        const edit = (e) => {
-             changeUserInput(e.currentTarget.value);
-        }; 
-
-        const updateTodoLine = (e) => {
-            e.preventDefault();
-                if (newUserInput) {
-                    editTask(newUserInput);
-                } else {
-                    alert("Input a valid task name");
-                }
-            changeUserInput("");
-        };
-            setToDoList(editTask);
-            saveStateToLocalStorage(editTask);       
-
-        return (
-            <form onSubmit={updateTodoLine}>
-        	    <input
-          	    value={newUserInput}
-          		type="text"
-          		onChange={edit}
-          		placeholder={id}
-          		style={{
-            		 borderRadius: "5px",
-            		 backgroundColor: "#DBC4B7", 
-                }}
-                />
-            </form>  
-        );
-    }
-
     const deleteTodo = (id) => {
         const clean = toDoList.filter((task) => {
             return task.id !== id
@@ -124,10 +80,15 @@ function App() {
                 handleToggle={handleToggle}
                 handleFilter={handleFilter}
                 deleteTodo={deleteTodo}
-                updateTodo={updateTodo}
+                //updateTodo={updateTodo}
             />
 
             <ToDoForm addTask={addTask} />
+
+            <Update 
+                toDoList={toDoList}
+                setTodo={setTodo}
+            />
         </div>
     );
 }
