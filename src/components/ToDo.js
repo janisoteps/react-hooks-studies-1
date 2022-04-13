@@ -2,7 +2,7 @@ import React from "react";
 import ActionButton from "./ActionButton";
 
 
-const ToDo = ({ todo, handleToggle, deleteTodo, updateTodo }) => {
+const ToDo = ({ todo, handleToggle, deleteTodo, editTodo }) => {
 	return (
       	<div
         	style={{
@@ -46,7 +46,8 @@ const ToDo = ({ todo, handleToggle, deleteTodo, updateTodo }) => {
 				/>
 				<ActionButton 
 					actionFunction={() => {
-						updateTodo(todo.id);
+						//updateTodo(todo.id);
+						editTodo(todo.id, todo.task);
 					}}
 					buttonText='change'
 					buttonColor='#f2d8c2'

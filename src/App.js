@@ -88,6 +88,8 @@ function App() {
             <Update 
                 toDoList={toDoList}
                 setTodo={setTodo}
+                editTodo={editTodo}
+                saveTodo={saveTodo}
             />
         </div>
     );
