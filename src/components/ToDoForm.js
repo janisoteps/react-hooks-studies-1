@@ -30,7 +30,7 @@ const ToDoForm = ({ addTask }) => {
             		borderRadius: "5px",
             		backgroundColor: "#F2D1B3",
           	    }}
-        />
+        	/>
         	<button
           		style={{
             		backgroundColor: "#733843",

@@ -70,6 +70,22 @@ function App() {
         saveStateToLocalStorage(copy);
     };
 
+    const updateTask = (id, newText) => {
+        
+        const newTodoList = toDoList.map(task => {
+            if (task.id === id) {
+                let updatedTask = task;
+                updatedTask.task = newText;
+
+                return updatedTask
+            } else {
+                return task
+            }
+        });
+        setToDoList(newTodoList);
+        saveStateToLocalStorage(newTodoList);
+    };
+
     return (
         <div className="App">
             <Header />
@@ -78,6 +94,7 @@ function App() {
                 handleToggle={handleToggle}
                 handleFilter={handleFilter}
                 deleteTodo={deleteTodo}
+                updateTask={updateTask}
             />
 
             <ToDoForm addTask={addTask} />
